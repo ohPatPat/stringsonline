@@ -8,6 +8,7 @@
   box-sizing: border-box;
   outline: none;
   font-family: "Titillium Web", sans-serif;
+  color: #ffffff;
 }
 
 //COLOR MODS
@@ -23,7 +24,6 @@ $DarkGrey: #393939;
 
 body {
   background-color: $Bg;
-  height: 300vh;
 
   header {
     top: 0;
@@ -86,6 +86,7 @@ body {
           transform: translateY(-50%);
 
           li {
+            color: $White;
             display: inline-block;
             font-size: 3vw;
 
@@ -95,6 +96,15 @@ body {
               background: $Action;
               padding: 0 1vw 5vw;
               border-radius: 5px;
+              a {
+                color: $Bg;
+              }
+            }
+            a {
+              color: $White;
+            }
+            .active {
+              color: $Action;
             }
           }
         }
@@ -122,6 +132,10 @@ body {
         color: #0d2d2b;
         font-size: 5vw;
         padding: 0 2vw;
+
+        path {
+          color: #0d2d2b;
+        }
       }
     }
     #Breadcrumps {
@@ -134,7 +148,7 @@ body {
       height: 7vw;
       nav {
         display: flex;
-        gap:1vw;
+        gap: 1vw;
         img {
           position: relative;
           height: 50%;
@@ -151,6 +165,16 @@ body {
       }
     }
   }
+  main {
+    margin-top: 40vw;
+    width: 100%;
+    padding: 0 3vw;
+    &#Forside {
+      img {
+        width: 100%;
+      }
+    }
+  }
   footer {
     position: absolute;
     bottom: 0;
@@ -163,7 +187,8 @@ body {
 
     img {
       margin: auto;
-      height: 4vh;
+      height: 70%;
+      position: relative;
     }
   }
 }

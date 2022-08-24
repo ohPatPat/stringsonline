@@ -3,6 +3,10 @@ import {Footer} from './components/footer/Footer.jsx';
 import { Header } from './components/header/Header';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react'
+import { Forside } from './pages/Forside.jsx';
+import { Salgs } from './pages/Salgs.jsx';
+import { Login } from './pages/login/Login.jsx';
+import { Fejl } from './pages/Fejl.jsx';
 
 
 const Redirect = ({ to }) => {
@@ -17,18 +21,15 @@ const Redirect = ({ to }) => {
 function App() {
   return (
     <>
+    <Router>
     <Header></Header>
 
-    <Router>
           <Routes>
-            <Route index element={<Home title={"Patia's workshop | Front page"} />} />
-            <Route path="/aboutMe" element={<About title={"Patia's workshop | About me page"} />} />
-            <Route path="/menu" element={<Menu title={"Patia's workshop | Inventory page"} />} />
-            <Route path="/logos" element={<Logos title={"Patia's workshop | Logo commission page"} />} />
-            <Route path="/overlays" element={<Overlays title={"Patia's workshop | Overlays commission page"} />} />
-            <Route path="/schedules" element={<Schedules title={"Patia's workshop | Schedules commission page"} />} />
-            <Route path="/tos" element={<TOS title={"Patia's workshop | TOS page"} />} />
-            <Route path="*" element={<Error title={"Patia's workshop | lkjgljf page"} />} />
+            <Route index element={<Forside title={"Strings Online | Forside"} />} />
+            <Route path="/Salgs" element={<Salgs title={"Strings Online | Salgs- og handelbetingelser"} />} />
+            <Route path="/Login" element={<Login title={"Strings Online | Login"} />} />
+
+            <Route path="*" element={<Fejl title={"Strings Online | Fejl"} />} />
           </Routes>
         </Router>
 

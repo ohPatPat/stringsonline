@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Titillium Web", sans-serif;
+}
+
+//COLOR MODS
+$Bg: #131313;
+$White: #ffffff;
+$PastelRed: #d10061;
+$DarkBlack: #0a1d1c;
+$NeonRed: #ff003d;
+$LightBlack: #2c3737;
+$LightGrey: #afafaf;
+$Action: #00f9b6;
+$DarkGrey: #393939;
+
+body {
+  background-color: $Bg;
+  height: 300vh;
+
+  header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    background-color: $Bg;
+    padding: 0 4vw 2vw;
+    #Topheader {
+      font-weight: 200;
+      position: relative;
+      top: 50%;
+      height: 1.5vh;
+      margin-top: 1vh;
+      padding: 0 0vw;
+      display: flex;
+      justify-content: center;
+      gap: 4vw;
+      div {
+        img {
+          height: 100%;
+        }
+
+        p {
+          color: $White;
+          text-align: center;
+          text-transform: uppercase;
+          padding-left: 1vw;
+          font-size: 2.5vw;
+          display: inline-block;
+          position: relative;
+          top: -25%;
+        }
+      }
+    }
+    #HeaderNav {
+      margin-top: 1vh;
+      height: 10vw;
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      img {
+        width: auto;
+        height: 80%;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      nav {
+        width: auto;
+        ul {
+          height: 50%;
+          color: $White;
+          text-transform: capitalize;
+          display: flex;
+          gap: 3vw;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+
+          li {
+            display: inline-block;
+            font-size: 3vw;
+
+            &:last-child {
+              position: relative;
+              color: $Bg;
+              background: $Action;
+              padding: 0 1vw 5vw;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+    }
+    #HeaderSearch {
+      display: flex;
+      justify-content: right;
+      gap: 2vw;
+      input {
+        width: 40vw;
+        padding: 1vw 0 2vw;
+        border: 2px solid #0d2d2b;
+        border-radius: 5px;
+        background-color: #091d1c;
+        &::placeholder {
+          font-weight: 200;
+          color: $Action;
+          padding-left: 3vw;
+        }
+      }
+      button {
+        background-color: $Action;
+        border-radius: 5px;
+        color: #0d2d2b;
+        font-size: 5vw;
+        padding: 0 2vw;
+      }
+    }
+    #Breadcrumps {
+      font-weight: 200;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1vh;
+      border-top: 1px solid $DarkGrey;
+      border-bottom: 1px solid $DarkGrey;
+      height: 7vw;
+      nav {
+        display: flex;
+        gap:1vw;
+        img {
+          position: relative;
+          height: 50%;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        p {
+          font-size: 4vw;
+        }
+      }
+      p {
+        color: $Action;
+        font-size: 4vw;
+      }
+    }
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $DarkGrey;
+    width: 100%;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+
+    img {
+      margin: auto;
+      height: 4vh;
+    }
+  }
+}

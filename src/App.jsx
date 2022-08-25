@@ -1,5 +1,5 @@
 import './App.scss';
-import {Footer} from './components/footer/Footer.jsx';
+import { Footer } from './components/footer/Footer.jsx';
 import { Header } from './components/header/Header';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react'
@@ -7,6 +7,7 @@ import { Forside } from './pages/Forside.jsx';
 import { Salgs } from './pages/Salgs.jsx';
 import { Login } from './pages/login/Login.jsx';
 import { Fejl } from './pages/Fejl.jsx';
+import { useAuth } from "./pages/login/Auth.js";
 
 
 const Redirect = ({ to }) => {
@@ -19,22 +20,28 @@ const Redirect = ({ to }) => {
 
 
 function App() {
+  const { loginData } = useAuth(Login);
+
   return (
     <>
-    <Router>
-    <Header></Header>
+      <Router>
+        <Header></Header>
 
-          <Routes>
-            <Route index element={<Forside title={"Strings Online | Forside"} />} />
+        <Routes>
+          <Route index element={<Forside title={"Strings Online | Forside"} />} />
+
+          {loginData.access_token &&
             <Route path="/Salgs" element={<Salgs title={"Strings Online | Salgs- og handelbetingelser"} />} />
-            <Route path="/Login" element={<Login title={"Strings Online | Login"} />} />
 
-            <Route path="*" element={<Fejl title={"Strings Online | Fejl"} />} />
-          </Routes>
-        </Router>
+          }
+          <Route path="/Login" element={<Login title={"Strings Online | Login"} />} />
+
+          <Route path="*" element={<Fejl title={"Strings Online | Fejl"} />} />
+        </Routes>
+      </Router>
 
 
-    <Footer></Footer>
+      <Footer></Footer>
     </>
   );
 }

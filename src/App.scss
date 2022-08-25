@@ -146,7 +146,7 @@ body {
       border-top: 1px solid $DarkGrey;
       border-bottom: 1px solid $DarkGrey;
       height: 7vw;
-      nav {
+      a {
         display: flex;
         gap: 1vw;
         img {
@@ -164,6 +164,33 @@ body {
         font-size: 4vw;
       }
     }
+    #BreadcrumpsOff{
+      opacity: 30%;
+      pointer-events: none;    
+      font-weight: 200;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1vh;
+      border-top: 1px solid $DarkGrey;
+      border-bottom: 1px solid $DarkGrey;
+      height: 7vw;
+      a {
+        display: flex;
+        gap: 1vw;
+        img {
+          position: relative;
+          height: 50%;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        p {
+          font-size: 4vw;
+        }
+      }
+      p {
+        color: $Action;
+        font-size: 4vw;
+      }}
   }
   main {
     margin-top: 40vw;

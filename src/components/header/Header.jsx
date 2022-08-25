@@ -5,6 +5,9 @@ import HomeIcon from "../../assets/img/decoration/icons/home-icon.png";
 import BigLogo from "../../assets/img/decoration/header-bg.png";
 import SmallLogo from "../../assets/img/decoration/LogoV2.png";
 import { NavLink } from "react-router-dom";
+import { Login } from "../../pages/login/Login.jsx";
+import { useAuth } from "../../pages/login/Auth.js";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,6 +18,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 export const Header = () => {
+
+  const { loginData } = useAuth(Login);
+
   return (
     <header>
       <section id="Topheader">
@@ -43,7 +49,9 @@ export const Header = () => {
               <NavLink to="/Salgs"> Salgs- og handelbetingelser </NavLink>
             </li>
             <li>
-              <NavLink to="/Login"> Login</NavLink>
+              <NavLink to="/Login">
+                {loginData.access_token ? "Log ud" : "Log ind"}
+              </NavLink>
             </li>
           </ul>
         </nav>
@@ -54,13 +62,15 @@ export const Header = () => {
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
       </section>
-      <section id="Breadcrumps">
-        <nav>
-          <img src={HomeIcon} alt="Home icon" />
-          <p>Forside</p>
-        </nav>
+      <section id={loginData.access_token ? "Breadcrumps" : "BreadcrumpsOff"}>
+          <NavLink to="/">
+            <img src={HomeIcon} alt="Home icon" />
+            <p>
+               forside
+            </p>
+          </NavLink>
         <p>Ordrehistorik</p>
       </section>
-    </header>
+    </header >
   );
 };

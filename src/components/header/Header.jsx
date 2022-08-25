@@ -46,7 +46,13 @@ export const Header = () => {
               <NavLink to="/"> forside </NavLink>
             </li>
             <li>
+            {!loginData.access_token &&
+              <NavLink to="/Login"> Salgs- og handelbetingelser </NavLink>
+            }
+            {loginData.access_token &&
               <NavLink to="/Salgs"> Salgs- og handelbetingelser </NavLink>
+            }
+
             </li>
             <li>
               <NavLink to="/Login">

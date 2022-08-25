@@ -32,7 +32,6 @@ function App() {
 
           {loginData.access_token &&
             <Route path="/Salgs" element={<Salgs title={"Strings Online | Salgs- og handelbetingelser"} />} />
-
           }
           <Route path="/Login" element={<Login title={"Strings Online | Login"} />} />
 
